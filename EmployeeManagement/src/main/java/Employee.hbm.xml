@@ -1,0 +1,44 @@
+<?xml version = "1.0" encoding="UTF-8"?>    
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ideas2it.model">
+
+	<class name="Employee" table="employee">
+
+		<id name="id" column="id" type="int">
+		    <generator class="increment"/>
+		</id>
+		<property name="name" column="name" type="string"></property>
+		<property name="bloodGroup" column="blood_group"
+			type="string"></property>
+		<property name="dateOfBirth" column="date_of_birth"
+			type="date"></property>
+		<property name="designation" column="designation"
+			type="string"></property>
+		<property name="gender" column="gender" type="string"></property>
+		<property name="phoneNumber" column="phone_number"
+			type="long"></property>
+		<property name="email" column="email" type="string"></property>
+
+		<joined-subclass name="Trainer" table="trainer">
+			<key column="id"></key>
+			<property name="trainerId" column="trainer_id" type="string">
+			</property>
+			<property name="trainingSince" column="training_since"
+				type="int"></property>
+		</joined-subclass>
+
+		<joined-subclass name="Trainee" table="trainee">
+			<key column="id"></key>
+			<property name="traineeId" column="trainee_id" type="string"></property>
+			<property name="dateOfJoining" column="date_of_joining"
+				type="date"></property>
+			<set name="Skills" fetch="join" lazy="true" cascade="all">
+				<key column="id" />
+				<one-to-many class="Skill"/>
+			</set>
+		</joined-subclass>
+	</class>
+
+</hibernate-mapping>
