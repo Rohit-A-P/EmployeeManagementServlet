@@ -4,11 +4,14 @@
 <head>
 <title>INSERT TRAINEE</title>
 </head>
-
-<body>
-	<form action="/SaverTrainee" method="post">  
-		<label>Enter Name :</label> <input type="text" name="name"><br>
-		<label>Enter Blood Group :</label> <select name="bloodGroup"
+<h1>INSERT TRAINEE</h1>
+<body style="margin-left: 38%">
+	<form action="SaveTrainee" method="post">  
+	<input type="hidden" name="flag" value="insertTrainee" />
+		<label>Enter Name :</label>
+		 <input type="text" name="name"><br>
+		<label>Enter Blood Group :</label>
+		 <select name="bloodGroup"
 			style="width: 120px">
 			<option>A+</option>
 			<option>A-</option>
@@ -20,7 +23,7 @@
 			<option>O</option>
 		</select><br> <label for="dateOfBirth"> Date of birth :</label>
 		<input type="date" id="dateOfBirth" name="dateOfBirth"><br>
-	    <label>Enter Designation :</label> <input type="text" name="desgination"><br>
+	    <label>Enter Designation :</label> <input type="text" name="designation"><br>
 		<label>Select Gender :</label> <input type="radio" name="gender"
 			value="MALE">MALE <input type="radio" name="gender"
 			value="FEMALE">FEMALE <input type="radio" name="gender"
@@ -28,16 +31,16 @@
 	    <label>Enter Phone number :</label> <input type="text" name="phoneNumber"><br>
 	    <label>Enter email :</label> <input type="text" name="email"><br>
 	    <label>Enter Date of joining :</label>
-	    <input type="date" id="dateOfBirth" name="dateOfBirth"><br>
+	    <input type="date" id="dateOfJoining" name="dateOfJoining"><br>
 	    <label>Enter Skill Name      :</label> <input type="text" name="skillName1"><br>
-	    <label>Enter Skill skill Experience :</label> <input type="text" name="skillExperience1"><br>
-		<label>Enter Skill skill Version :</label> <input type="text" name="skillVersion1"><br>
+	    <label>Enter Skill Experience :</label> <input type="text" name="skillExperience1"><br>
+		<label>Enter Skill Version :</label> <input type="text" name="skillVersion1"><br>
 		<label>Enter Skill Certified (YES/NO) :</label>
 		<input type="radio" name="skillCertification1" value="YES">Yes
 		<input type="radio" name="skillCertification1" value="NO">No<br>
 		<label>Enter Skill Name :</label> <input type="text" name="skillName2"><br>
-		<label>Enter Skill skill Experience :</label> <input type="text" name="skillExperience2"><br>
-		<label>Enter Skill skill Version :</label> 
+		<label>Enter Skill Experience :</label> <input type="text" name="skillExperience2"><br>
+		<label>Enter Skill Version :</label> 
 		<input type="text" name="skillVersion2"><br>
 		<label>Enter Skill Certified(YES/NO) :</label>
 		<input type="radio" name="skillCertification2" value="YES">Yes

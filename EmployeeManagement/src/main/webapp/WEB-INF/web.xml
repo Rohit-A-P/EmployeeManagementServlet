@@ -6,7 +6,7 @@
   <display-name>EmployeeManagement</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-  </welcome-file-list>
+  </welcome-file-list>  
   <servlet>
     <servlet-name>TrainerController</servlet-name>
     <servlet-class>com.ideas2it.controller.TrainerController</servlet-class>
@@ -14,5 +14,13 @@
   <servlet-mapping>
     <servlet-name>TrainerController</servlet-name>
     <url-pattern>/SaveTrainer</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>TraineeController</servlet-name>
+    <servlet-class>com.ideas2it.controller.TraineeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TraineeController</servlet-name>
+    <url-pattern>/SaveTrainee</url-pattern>
   </servlet-mapping>
 </web-app>
