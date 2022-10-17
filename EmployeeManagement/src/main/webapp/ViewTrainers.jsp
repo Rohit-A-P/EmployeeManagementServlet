@@ -20,7 +20,7 @@
 			<th>Phone Number</th>
 			<th>email</th>
 			<th>Training Since</th>
-			<th>Edit</th>
+			<th>Update</th>
 		    <th>Delete</th>
 		</tr>
 		<%
@@ -37,8 +37,8 @@
 			<td><%=trainer.getPhoneNumber()%></td>
 			<td><%=trainer.getEmail()%></td>
 			<td><%=trainer.getTrainingSince()%></td>
-			<td><a href="SaveTrainer?flag=getTrainerById&id=<%=trainer.getId()%>">Update</a></td>
-			<td><a href="SaveTrainer?flag=deleteTrainer&id=<%=trainer.getId()%>">Delete</a></td>
+			<td><a href="TrainerController?flag=getTrainerById&id=<%=trainer.getId()%>">Update</a></td>
+			<td><a href="TrainerController?flag=deleteTrainer&id=<%=trainer.getId()%>">Delete</a></td>
 		</tr>
 		<% } %>
 	</table>

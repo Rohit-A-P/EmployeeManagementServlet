@@ -13,16 +13,21 @@
 	<input type="hidden" name="flag" value="viewTrainees">
 	<table border="1" width="90%">
 		<tr>
-			<th>id</th>
+			<th>ID</th>
 			<th>Name</th>
-			<th>bloodGroup</th>
-			<th>dateOfBirth</th>
-			<th>designation</th>
-			<th>gender</th>
+			<th>Blood Group</th>
+			<th>Date Of Birth</th>
+			<th>Designation</th>
+			<th>Gender</th>
 			<th>Phone Number</th>
-			<th>email</th>
+			<th>Email</th>
 			<th>Date Of Joining</th>
-			<th>Edit</th>
+		    <%
+		    for(int index = 0; 2 > index; index++) {
+		    %>
+			<th>Skill Name</th>
+			<% } %>
+			<th>Update</th>
 			<th>Delete</th>
 		</tr>
 		<%
@@ -39,8 +44,14 @@
 			<td><%=trainee.getPhoneNumber()%></td>
 			<td><%=trainee.getEmail()%></td>
 			<td><%=trainee.getDateOfJoining()%></td>
-			<td><a href="SaveTrainee?flag=getTraineeById&id=<%=trainee.getId()%>">Update</a></td>
-			<td><a href="SaveTrainee?flag=deleteTrainee&id=<%=trainee.getId()%>">Delete</a></td>
+			<%
+		    Set<Skill> skills = trainee.getSkills();
+		    for (Skill skill : skills) {
+		    %>
+			<td><%=skill.getSkillName()%></td>
+			<% } %>
+			<td><a href="TraineeController?flag=getTraineeById&id=<%=trainee.getId()%>">Update</a></td>
+			<td><a href="TraineeController?flag=deleteTrainee&id=<%=trainee.getId()%>">Delete</a></td>
 		</tr>
 		<% } %>
 	</table>

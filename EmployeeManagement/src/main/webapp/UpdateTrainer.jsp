@@ -7,7 +7,7 @@
 </head>
 <h1>UPDATE TRAINER</h1>
 <body style="margin-left: 38%">
-    <form action="SaveTrainer" method="post" > 
+    <form action="TrainerController" method="post" > 
     <input type="hidden" name="flag" value="updateTrainer"> 
     <%  
       Trainer trainer = (Trainer)request.getAttribute("trainer");

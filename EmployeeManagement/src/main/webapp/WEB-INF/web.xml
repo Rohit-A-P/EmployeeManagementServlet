@@ -13,7 +13,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>TrainerController</servlet-name>
-    <url-pattern>/SaveTrainer</url-pattern>
+    <url-pattern>/TrainerController</url-pattern>
   </servlet-mapping>
     <servlet>
     <servlet-name>TraineeController</servlet-name>
@@ -21,6 +21,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>TraineeController</servlet-name>
-    <url-pattern>/SaveTrainee</url-pattern>
+    <url-pattern>/TraineeController</url-pattern>
   </servlet-mapping>
 </web-app>

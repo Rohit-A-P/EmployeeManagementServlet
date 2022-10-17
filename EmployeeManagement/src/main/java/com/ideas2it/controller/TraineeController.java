@@ -60,6 +60,9 @@ public class TraineeController extends HttpServlet {
         case "deleteTrainee":
             deleteTrainee(request, response);
             break;
+        case "getTraineeById":
+            getTraineeById(request, response);
+            break;    
         }
     }
 
@@ -96,33 +99,35 @@ public class TraineeController extends HttpServlet {
 
         Set<Skill> skills = new HashSet<Skill>();
 
-        Skill skill = new Skill();
+        Skill skillOne = new Skill();
+        
+        skillOne.setTraineeId(traineeId);
 
-        skill.setTraineeId(traineeId);
-
-        skill.setSkillName(request.getParameter("skillName1"));
+        skillOne.setSkillName(request.getParameter("skillName1"));
 
         String expirenece = request.getParameter("skillExperience1");
-        skill.setSkillExperience(Float.valueOf(expirenece));
+        skillOne.setSkillExperience(Float.valueOf(expirenece));
 
-        skill.setSkillVersion(request.getParameter("skillVersion1"));
+        skillOne.setSkillVersion(request.getParameter("skillVersion1"));
 
-        skill.setSkillCertification(request.getParameter("skillCertification1"));
+        skillOne.setSkillCertification(request.getParameter("skillCertification1"));
 
-        skills.add(skill);
+        skills.add(skillOne);
+        
+        Skill skillTwo = new Skill();
 
-        skill.setTraineeId(traineeId);
+        skillTwo.setTraineeId(traineeId);
 
-        skill.setSkillName(request.getParameter("skillName2"));
+        skillTwo.setSkillName(request.getParameter("skillName2"));
 
         expirenece = request.getParameter("skillExperience2");
-        skill.setSkillExperience(Float.valueOf(expirenece));
+        skillTwo.setSkillExperience(Float.valueOf(expirenece));
 
-        skill.setSkillVersion(request.getParameter("skillVersion2"));
+        skillTwo.setSkillVersion(request.getParameter("skillVersion2"));
 
-        skill.setSkillCertification(request.getParameter("skillCertification2"));
+        skillTwo.setSkillCertification(request.getParameter("skillCertification2"));
 
-        skills.add(skill);
+        skills.add(skillTwo);
 
         Trainee trainee = new Trainee(id, name, bloodGroup, designation, dateOfBirth,
                 gender, phoneNumber, email, traineeId, dateOfJoining, skills);
@@ -186,33 +191,35 @@ public class TraineeController extends HttpServlet {
 
         Set<Skill> skills = new HashSet<Skill>();
 
-        Skill skill = new Skill();
+        Skill skillOne = new Skill();
+        
+        skillOne.setTraineeId(traineeId);
 
-        skill.setTraineeId(traineeId);
-
-        skill.setSkillName(request.getParameter("skillName1"));
+        skillOne.setSkillName(request.getParameter("skillName1"));
 
         String expirenece = request.getParameter("skillExperience1");
-        skill.setSkillExperience(Float.valueOf(expirenece));
+        skillOne.setSkillExperience(Float.valueOf(expirenece));
 
-        skill.setSkillVersion(request.getParameter("skillVersion1"));
+        skillOne.setSkillVersion(request.getParameter("skillVersion1"));
 
-        skill.setSkillCertification(request.getParameter("skillCertification1"));
+        skillOne.setSkillCertification(request.getParameter("skillCertification1"));
 
-        skills.add(skill);
+        skills.add(skillOne);
+        
+        Skill skillTwo = new Skill();
 
-        skill.setTraineeId(traineeId);
+        skillTwo.setTraineeId(traineeId);
 
-        skill.setSkillName(request.getParameter("skillName2"));
+        skillTwo.setSkillName(request.getParameter("skillName2"));
 
         expirenece = request.getParameter("skillExperience2");
-        skill.setSkillExperience(Float.valueOf(expirenece));
+        skillTwo.setSkillExperience(Float.valueOf(expirenece));
 
-        skill.setSkillVersion(request.getParameter("skillVersion2"));
+        skillTwo.setSkillVersion(request.getParameter("skillVersion2"));
 
-        skill.setSkillCertification(request.getParameter("skillCertification2"));
+        skillTwo.setSkillCertification(request.getParameter("skillCertification2"));
 
-        skills.add(skill);
+        skills.add(skillTwo);
 
         Trainee trainee = new Trainee(id, name, bloodGroup, designation, dateOfBirth,
                 gender, phoneNumber, email, traineeId, dateOfJoining, skills);
@@ -220,7 +227,7 @@ public class TraineeController extends HttpServlet {
         employeeService.updateTraineeById(trainee);
         
         try {
-            response.sendRedirect("http://localhost:8080/EmployeeManagement/SaveTrainee?flag=viewTrainees");
+            response.sendRedirect("http://localhost:8080/EmployeeManagement/TraineeController?flag=viewTrainees");
         } catch (IOException e) {
             e.printStackTrace();
         }  
@@ -237,7 +244,7 @@ public class TraineeController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         boolean isIdExist = employeeService.deleteTraineeById(id);
         try {
-            response.sendRedirect("http://localhost:8080/EmployeeManagement/SaveTrainee?flag=viewTrainees");
+            response.sendRedirect("http://localhost:8080/EmployeeManagement/TraineeController?flag=viewTrainees");
         } catch (IOException e) {
             e.printStackTrace();
         }  

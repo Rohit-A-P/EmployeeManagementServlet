@@ -102,6 +102,7 @@ public class TrainerController extends HttpServlet {
                 dateOfBirth, gender, phoneNumber, email, trainerId, trainingSince);
 
         id = employeeService.insertTrainer(trainer);
+        viewTrainers(request, response);
     }
 
     /**
@@ -161,7 +162,7 @@ public class TrainerController extends HttpServlet {
        employeeService.updateTrainerById(trainer);
        
        try {
-           response.sendRedirect("http://localhost:8080/EmployeeManagement/SaveTrainer?flag=viewTrainers");
+           response.sendRedirect("http://localhost:8080/EmployeeManagement/TrainerController?flag=viewTrainers");
        } catch (IOException e) {
            e.printStackTrace();
        }  
@@ -178,7 +179,7 @@ public class TrainerController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         boolean isIdExist = employeeService.deleteTrainerById(id);
         try {
-            response.sendRedirect("http://localhost:8080/EmployeeManagement/SaveTrainer?flag=viewTrainers");
+            response.sendRedirect("http://localhost:8080/EmployeeManagement/TrainerController?flag=viewTrainers");
         } catch (IOException e) {
             e.printStackTrace();
         }  

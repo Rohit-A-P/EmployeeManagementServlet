@@ -7,11 +7,11 @@
 </head>
 <h1>UPDATE TRAINEE</h1>
 <body style="margin-left: 38%">
-    <form action="SaveTrainee" method="post" > 
+    <form action="TraineeController" method="post" >
+    <input type="hidden" name="flag" value="updateTrainee">  
     <%  
       Trainee trainee = (Trainee)request.getAttribute("trainee");
-     %>
-    <input type="hidden" name="flag" value="updateTrainer">  
+     %> 
         <lable>ID  : <%=trainee.getId()%></label><br>  
         <input type="hidden" name="id" value="<%=trainee.getId()%>">  
 		<label>Enter Name :</label>
@@ -38,6 +38,19 @@
 	    <label>Enter email :</label> <input type="text" name="email" value = "<%=trainee.getEmail()%>"><br>
         <label>Enter Date Of Joining         :</label>  
         <input type="date" id="dateOfJoining" name="dateOfJoining" value = "<%=trainee.getDateOfJoining()%>"><br>
+        	    <label>Enter Skill Name      :</label> <input type="text" name="skillName1"><br>
+	    <label>Enter Skill Experience :</label> <input type="text" name="skillExperience1"><br>
+		<label>Enter Skill Version :</label> <input type="text" name="skillVersion1"><br>
+		<label>Enter Skill Certified (YES/NO) :</label>
+		<input type="radio" name="skillCertification1" value="YES">Yes
+		<input type="radio" name="skillCertification1" value="NO">No<br>
+		<label>Enter Skill Name :</label> <input type="text" name="skillName2"><br>
+		<label>Enter Skill Experience :</label> <input type="text" name="skillExperience2"><br>
+		<label>Enter Skill Version :</label> 
+		<input type="text" name="skillVersion2"><br>
+		<label>Enter Skill Certified(YES/NO) :</label>
+		<input type="radio" name="skillCertification2" value="YES">Yes
+		<input type="radio" name="skillCertification2" value="NO">No<br>
 		<button type="submit">Update Trainer</button>
 		</form>
 </body>
